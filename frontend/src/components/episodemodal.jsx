@@ -12,7 +12,7 @@ const EpisodeModal = ({ isOpen, onClose, selectedEpisode, episodeNumber }) => {
       if (selectedEpisode) {
         try {
           setLoadingIframe(true);
-          const response = await axios.get(`https://onepieceonline.onrender.com/get-iframe?url=${selectedEpisode}`);
+          const response = await axios.get(`https://onepieceonline.onrender.com:3001/get-iframe?url=${selectedEpisode}`);
           setIframeSrc(response.data.iframeSrc);
           setLoadingIframe(false);
         } catch (error) {
@@ -27,7 +27,7 @@ const EpisodeModal = ({ isOpen, onClose, selectedEpisode, episodeNumber }) => {
   const handleIframeChange = async (option) => {
     try {
       setLoadingIframe(true);
-      const response = await axios.post('https://onepieceonline.onrender.com/fetch-iframe', {
+      const response = await axios.post('https://onepieceonline.onrender.com:3001/fetch-iframe', {
         url: selectedEpisode,
         option
       });

@@ -21,7 +21,7 @@ const IndexPage = () => {
 
   const fetchEpisodes = async (sortOrder = 'desc') => {
     try {
-      const response = await axios.get('https://onepieceonline.onrender.com/get-one-piece-episodes', {
+      const response = await axios.get('https://onepieceonline.onrender.com:3001/get-one-piece-episodes', {
         params: { sortOrder }
       });
       setEpisodes(response.data);
