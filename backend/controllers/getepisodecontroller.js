@@ -1,4 +1,5 @@
 const puppeteer = require('puppeteer');
+require("dotenv").config();
 
 const customWait = (ms) => new Promise(resolve => setTimeout(resolve, ms));
 
